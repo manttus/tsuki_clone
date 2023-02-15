@@ -1,10 +1,11 @@
 import { useRoutes } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
   const routes = useRoutes([
     {
       path: "/",
-      element: <h1> Navbar </h1>,
+      element: <Navbar />,
       children: [
         {
           element: <h1> Home </h1>,
