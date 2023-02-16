@@ -7,6 +7,7 @@ module.exports = {
         primary: "#F4E0EA",
         ghost: "#CFBEC6",
         ghostlight: "#AAE5FA",
+        textGhost: "#D6D6D6",
       },
       fontFamily: {
         sans: ["Nunito", "sans-serif"],
@@ -25,6 +26,8 @@ module.exports = {
       },
       fontSize: {
         xs: "11px",
+        sm: "16px",
+        head: "27px",
       },
     },
   },
