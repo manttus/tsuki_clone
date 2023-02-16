@@ -4,8 +4,10 @@ import { BiSearch } from "react-icons/bi";
 import { RxCaretRight } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex flex-col">
@@ -15,12 +17,22 @@ const Navbar = () => {
           <p className="font-normal">USE CODE: TSUKI</p>
         </div>
         <div className="flex h-1/4 w-full justify-between lg:py-3">
-          <div className="flex w-full justify-center z-1 lg:py-0 py-3">
-            <img className=" lg:w-40 md:w-40 w-36" src={logo} />
+          <div
+            className="flex w-full justify-center z-1 lg:py-0 py-3"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            <img className=" lg:w-40 md:w-40 w-32" src={logo} />
           </div>
           <div className="hidden lg:flex md:flex absolute h-48 bottom-0 top-0 right-0  justify-end items-center z-0">
             <ul className="flex w-full gap-4 px-10">
-              <li className="hover:text-primary">
+              <li
+                className="hover:text-primary"
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
                 <FiUser size={"25px"} />
               </li>
               <li className="hover:text-primary">
@@ -31,7 +43,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="absolute top-0 w-full justify-between items-center h-36 z-0 sm:px-5 px-4 lg:hidden md:hidden sm:flex flex">
+          <div className="absolute top-0 w-full justify-between items-center h-32 z-0 sm:px-5 px-4 lg:hidden md:hidden sm:flex flex">
             <div>
               <ul className="flex sm:gap-6  gap-4">
                 <li className="hover:text-primary">
@@ -55,12 +67,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="hidden lg:flex md:flex border-y-1 border-black w-full justify-center items-center ">
-          <ul className="flex gap-8 flex-wrap justify-center items-center py-3">
-            <li className="home flex cursor-pointer ml-2 hover:text-ghostlight items-center group tracking-wide">
+          <ul className="flex gap-9 flex-wrap justify-center items-center py-3">
+            <li className="group flex cursor-pointer ml-2 hover:text-ghostlight items-center group tracking-wide">
               HOME ホームページ
               <span>
                 <RxCaretRight
-                  className="home-hover:rotate-90 transition-all"
+                  className="group-hover:rotate-90 transition-all"
                   size={"20px"}
                 />
               </span>
@@ -68,20 +80,20 @@ const Navbar = () => {
             <li className="flex cursor-pointer ml-2 hover:text-ghostlight items-center tracking-wide">
               SALE 大売り出し
             </li>
-            <li className="shop flex cursor-pointer ml-2 hover:text-ghostlight items-center group tracking-wide">
+            <li className="group flex cursor-pointer ml-2 hover:text-ghostlight items-center tracking-wide">
               SHOP ALL すべての商品
               <span>
                 <RxCaretRight
-                  className="shop-hover:rotate-90 transition-all"
+                  className="group-hover:rotate-90 transition-all"
                   size={"20px"}
                 />
               </span>
             </li>
-            <li className="group collection ml-2  flex cursor-pointer hover:text-ghostlight items-center tracking-wide">
+            <li className="group ml-2  flex cursor-pointer hover:text-ghostlight items-center tracking-wide">
               COLLECTIONS コレクション
               <span>
                 <RxCaretRight
-                  className="collection-hover:rotate-90 transition-all"
+                  className="group-hover:rotate-90 transition-all"
                   size={"20px"}
                 />
               </span>
