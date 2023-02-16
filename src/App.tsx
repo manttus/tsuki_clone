@@ -1,44 +1,27 @@
-import { useRoutes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Navbar />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+    ],
+  },
+]);
 
 const App = () => {
-  const routes = useRoutes([
-    {
-      path: "/",
-      element: <Navbar />,
-      children: [
-        {
-          element: <h1> Home </h1>,
-        },
-        {
-          path: "sale",
-          element: <h1> Sale </h1>,
-        },
-        {
-          path: "shop",
-          element: <h1> Shop </h1>,
-        },
-        {
-          path: "collection",
-          element: <h1> Collection </h1>,
-        },
-        {
-          path: "cart",
-          element: <h1> cart </h1>,
-        },
-        {
-          path: "login",
-          element: <h1> login </h1>,
-        },
-        {
-          path: "signup",
-          element: <h1> signup </h1>,
-        },
-      ],
-    },
-  ]);
-
-  return routes;
+  return <RouterProvider router={routes} />;
 };
 
 export default App;
