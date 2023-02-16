@@ -5,6 +5,7 @@ import { RxCaretRight } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -105,6 +106,7 @@ const Navbar = () => {
         </div>
       </div>
       <Outlet />
+      <Footer />
     </>
   );
 };
