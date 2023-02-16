@@ -1,4 +1,4 @@
-import main from "../../assets/main.webp";
+import main from "../assets/main.webp";
 
 const Home = () => {
   return (
